@@ -1,0 +1,23 @@
+server:
+  host: "localhost"
+  port: 8080
+  mode: "debug" # debug, release
+
+database:
+  host: "localhost"
+  port: 3306
+  username: "root"
+  password: "password"
+  database: "ticket_service"
+  charset: "utf8mb4"
+  parse_time: true
+  max_idle_conns: 10
+  max_open_conns: 100
+
+jwt:
+  secret: "your-super-secret-jwt-key"
+  expires_hours: 24
+
+logging:
+  level: "info"
+  format: "json"
