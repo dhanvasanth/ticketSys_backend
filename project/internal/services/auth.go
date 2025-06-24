@@ -4,9 +4,9 @@ import (
     "encoding/json"
     "errors"
     "time"
-    "ticket-service/internal/config"
-    "ticket-service/internal/models"
-    "ticket-service/internal/repositories"
+    "project/internal/config"
+    "project/internal/models"
+    "project/internal/repositories"
     
     "github.com/golang-jwt/jwt/v5"
     "golang.org/x/crypto/bcrypt"

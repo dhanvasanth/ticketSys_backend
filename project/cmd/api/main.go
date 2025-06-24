@@ -3,12 +3,12 @@ package main
 import (
     "fmt"
     "log"
-    "ticket-service/internal/config"
-    "ticket-service/internal/database"
-    "ticket-service/internal/handlers"
-    "ticket-service/internal/middleware"
-    "ticket-service/internal/repositories"
-    "ticket-service/internal/services"
+    "project/internal/config"
+    "project/internal/database"
+    "project/internal/handlers"
+    "project/internal/middleware"
+    "project/internal/repositories"
+    "project/internal/services"
     
     "github.com/gin-gonic/gin"
 )

@@ -2,8 +2,8 @@ package handlers
 
 import (
     "net/http"
-    "ticket-service/internal/models"
-    "ticket-service/internal/services"
+    "project/internal/models"
+    "project/internal/services"
     
     "github.com/gin-gonic/gin"
 )

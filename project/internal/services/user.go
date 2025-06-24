@@ -1,8 +1,8 @@
 package services
 
 import (
-    "ticket-service/internal/models"
-    "ticket-service/internal/repositories"
+    "project/internal/models"
+    "project/internal/repositories"
 )
 
 type UserService interface {

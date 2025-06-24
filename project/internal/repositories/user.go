@@ -1,8 +1,8 @@
 package repositories
 
 import (
-    "errors"
-    "ticket-service/internal/models"
+    //"errors"
+    "project/internal/models"
     "gorm.io/gorm"
 )
 

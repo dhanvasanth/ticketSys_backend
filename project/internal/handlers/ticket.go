@@ -3,8 +3,8 @@ package handlers
 import (
     "net/http"
     "strconv"
-    "ticket-service/internal/models"
-    "ticket-service/internal/services"
+    "project/internal/models"
+    "project/internal/services"
     
     "github.com/gin-gonic/gin"
 )

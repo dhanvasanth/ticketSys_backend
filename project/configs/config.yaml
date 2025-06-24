@@ -6,8 +6,8 @@ server:
 database:
   host: "localhost"
   port: 3306
-  username: "root"
-  password: "password"
+  username: "mariadb"
+  password: "mariadb"
   database: "ticket_service"
   charset: "utf8mb4"
   parse_time: true

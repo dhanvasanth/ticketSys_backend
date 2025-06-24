@@ -3,8 +3,8 @@ package database
 import (
     "fmt"
     "log"
-    "ticket-service/internal/config"
-    "ticket-service/internal/models"
+    "project/internal/config"
+    "project/internal/models"
     
     "gorm.io/driver/mysql"
     "gorm.io/gorm"

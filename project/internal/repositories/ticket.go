@@ -1,8 +1,10 @@
 package repositories
 
 import (
-    "ticket-service/internal/models"
+    "project/internal/models"
     "gorm.io/gorm"
+	"fmt"
+	"time"
 )
 
 type TicketRepository interface {

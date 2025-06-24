@@ -2,10 +2,10 @@ package services
 
 import (
     "errors"
-    "strconv"
+    //"strconv"
     "time"
-    "ticket-service/internal/models"
-    "ticket-service/internal/repositories"
+    "project/internal/models"
+    "project/internal/repositories"
 )
 
 type TicketService interface {
