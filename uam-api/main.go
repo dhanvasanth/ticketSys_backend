@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"strconv"
 	"time"
-
+	"strings"
 	"github.com/gin-gonic/gin"
 	_ "github.com/go-sql-driver/mysql"
 )
@@ -622,5 +622,5 @@ func main() {
 	defer db.Close()
 	
 	r := setupRoutes()
-	r.Run(":8080")
+	r.Run(":6001")
 }
