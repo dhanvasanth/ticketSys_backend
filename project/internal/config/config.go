@@ -9,6 +9,7 @@ type Config struct {
     Database DatabaseConfig `mapstructure:"database"`
     JWT      JWTConfig      `mapstructure:"jwt"`
     Logging  LoggingConfig  `mapstructure:"logging"`
+    SMTP SMTPConfig `yaml:"smtp"`
 }
 
 type ServerConfig struct {
@@ -37,7 +38,15 @@ type JWTConfig struct {
 type LoggingConfig struct {
     Level  string `mapstructure:"level"`
     Format string `mapstructure:"format"`
+
 }
+
+type SMTPConfig struct {
+	Email    string `yaml:"email"`
+	Password string `yaml:"password"`
+}
+
+
 
 func Load() (*Config, error) {
     viper.SetConfigName("config")
