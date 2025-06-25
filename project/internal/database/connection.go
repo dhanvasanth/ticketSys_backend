@@ -1,3 +1,4 @@
+// project/internal/database/connection.go
 package database
 
 import (
@@ -36,6 +37,7 @@ func Connect(cfg *config.DatabaseConfig) (*gorm.DB, error) {
         &models.User{},
         &models.Ticket{},
         &models.TicketComment{},
+        &models.RoleChangeRequest{}, // Add the new model
     ); err != nil {
         return nil, err
     }
