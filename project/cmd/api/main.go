@@ -14,7 +14,7 @@ import (
 )
 
 func main() {
-    // Load configuration
+    // Load configurationproject/
     cfg, err := config.Load()
     if err != nil {
         log.Fatal("Failed to load config:", err)
