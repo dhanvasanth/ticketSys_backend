@@ -14,6 +14,39 @@ type UserRepository interface {
     GetAll() ([]*models.User, error)
     GetRoles() ([]*models.Role, error)
     CreateRole(role *models.Role) error
+
+
+    CreateVerificationCode(code *models.EmailVerificationCode) error
+    GetVerificationCode(userID uint, code string) (*models.EmailVerificationCode, error)
+    UpdateVerificationCode(code *models.EmailVerificationCode) error
+    GetActiveVerificationCode(userID uint) (*models.EmailVerificationCode, error)
+    CleanupExpiredVerificationCodes() error
+}
+// Example implementation additions for GORM-based repository
+func (r *userRepository) CreateVerificationCode(code *models.EmailVerificationCode) error {
+    return r.db.Create(code).Error
+}
+
+func (r *userRepository) GetVerificationCode(userID uint, codeStr string) (*models.EmailVerificationCode, error) {
+    var code models.EmailVerificationCode
+    err := r.db.Where("user_id = ? AND code = ?", userID, codeStr).First(&code).Error
+    return &code, err
+}
+
+func (r *userRepository) UpdateVerificationCode(code *models.EmailVerificationCode) error {
+    return r.db.Save(code).Error
+}
+
+func (r *userRepository) GetActiveVerificationCode(userID uint) (*models.EmailVerificationCode, error) {
+    var code models.EmailVerificationCode
+    err := r.db.Where("user_id = ? AND used = ? AND expires_at > NOW()", userID, false).
+        Order("created_at DESC").First(&code).Error
+    return &code, err
+}
+
+func (r *userRepository) CleanupExpiredVerificationCodes() error {
+    return r.db.Where("expires_at < NOW() OR used = ?", true).
+        Delete(&models.EmailVerificationCode{}).Error
 }
 
 type userRepository struct {
