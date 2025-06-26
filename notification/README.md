@@ -58,7 +58,7 @@ database:
   host: localhost
   port: 3306
   user: mariadb
-  password: mariadb
+  password: pass
   name: otp
 🔐 Use a Gmail App Password if 2FA is enabled
 
@@ -66,10 +66,7 @@ database:
 bash
 Copy
 Edit
-docker run --name mariadb -e MYSQL_ROOT_PASSWORD=root \
-  -e MYSQL_DATABASE=otp \
-  -e MYSQL_USER=mariadb -e MYSQL_PASSWORD=mariadb \
-  -p 3306:3306 -d mariadb
+
 🚀 Running the API
 bash
 Copy
@@ -84,19 +81,17 @@ bash
 Copy
 Edit
 POST /send-otp
-Body (JSON):
 
-json
-Copy
-Edit
-{
+http://localhost:8081/send-otp
+Body (JSON):{
   "email": "user@example.com"
 }
+
 🔸 Verify OTP
 bash
 Copy
 Edit
-POST /verify-otp
+POST http://localhost:8081/verify-otp
 Body (JSON):
 
 json
