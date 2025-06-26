@@ -1,0 +1,16 @@
+smtp:
+  host: smtp.gmail.com
+  port: 587
+  username: raisecorporation2025@gmail.com
+  password: your password
+  from: raisecorporation2025@gmail.com
+
+otp:
+  expiry_minutes: 1
+
+database:
+  host: localhost
+  port: 3306
+  user: mariadb
+  password: your password
+  name: otp
