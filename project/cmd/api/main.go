@@ -9,6 +9,7 @@ import (
     "project/internal/middleware"
     "project/internal/repositories"
     "project/internal/services"
+    "github.com/gin-contrib/cors"
     
     "github.com/gin-gonic/gin"
     "go.uber.org/zap"
@@ -54,6 +55,7 @@ func main() {
     // Setup router
     gin.SetMode(cfg.Server.Mode)
     r := gin.Default()
+    r.Use(cors.Default())
     
     // Public routes
     auth := r.Group("/api/auth")

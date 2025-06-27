@@ -7,6 +7,8 @@ import (
 	"notification/database"
 	"notification/handlers"
 	"notification/logger"
+	"github.com/gin-contrib/cors"
+
 )
 
 func main() {
@@ -15,6 +17,7 @@ func main() {
 	database.InitDB()
 
 	r := gin.Default()
+	r.Use(cors.Default())
 
 	r.POST("/send-otp", handlers.SendOTP)
 	r.POST("/verify-otp", handlers.VerifyOTP)
